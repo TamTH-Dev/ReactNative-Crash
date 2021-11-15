@@ -63,7 +63,8 @@ export const categoryData = [
 
 // price rating
 const affordable = 1
-const expensive = 2
+const fairPrice = 2
+const expensive = 3
 export const restaurantData = [
   {
     id: 1,
@@ -113,7 +114,7 @@ export const restaurantData = [
     name: 'ByProgrammers Pizza',
     rating: 4.8,
     categories: [2, 4, 6],
-    priceRating: expensive,
+    priceRating: fairPrice,
     photo: images.pizza_restaurant,
     duration: '15 - 20 min',
     location: {

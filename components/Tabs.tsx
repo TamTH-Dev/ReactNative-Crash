@@ -1,4 +1,4 @@
-import React, { ComponentType, FC, ReactNode, MouseEvent } from 'react'
+import React, { FC, ReactNode, MouseEvent } from 'react'
 import {
   View,
   Image,
@@ -17,8 +17,9 @@ import { isIphoneX } from 'react-native-iphone-x-helper'
 
 import { Home } from '../screens'
 import { COLORS, icons } from '../constants'
+import { IBottomTabNavigatorParams } from '../types'
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator<IBottomTabNavigatorParams>()
 
 const TabBarCustomButton: FC<{
   accessibilityState?: AccessibilityState
@@ -97,7 +98,7 @@ const CustomTabBar: FC<{ props: BottomTabBarProps }> = ({ props }) => {
 export default function Tabs() {
   const tabs: Array<{
     name: string
-    component: ComponentType
+    component: any
     icon: string
   }> = [
     {
@@ -138,7 +139,7 @@ export default function Tabs() {
       {tabs.map(({ name, component, icon }) => (
         <Tab.Screen
           key={name}
-          name={name}
+          name={name as keyof IBottomTabNavigatorParams}
           component={component}
           options={{
             tabBarIcon: ({ focused }) => (

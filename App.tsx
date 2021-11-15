@@ -4,8 +4,9 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import Tabs from './components/Tabs'
 import { Restaurant, OrderDelivery } from './screens'
+import { IRootStackNavigatorParams } from './types'
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator<IRootStackNavigatorParams>()
 
 export default function App() {
   return (

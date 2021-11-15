@@ -1,10 +1,29 @@
+import { RouteProp } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
-export default function OrderDelivery() {
+import {
+  Map,
+  DestinationHeader,
+  DeliveryInfo,
+  Buttons,
+} from '../components/order-delivery'
+import { IRootStackNavigatorParams } from '../types'
+
+export default function OrderDelivery({
+  route,
+  navigation,
+}: {
+  route: RouteProp<IRootStackNavigatorParams, 'OrderDelivery'>
+  navigation: StackNavigationProp<IRootStackNavigatorParams, 'OrderDelivery'>
+}) {
   return (
-    <View>
-      <Text>Order Delivery</Text>
+    <View style={{ flex: 1 }}>
+      <Map />
+      <DestinationHeader />
+      <DeliveryInfo />
+      <Buttons />
     </View>
   )
 }
