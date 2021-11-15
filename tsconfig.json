@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots" : ["node_modules/@types", "types"]
+  },
+  "exclude": [
+    "node_modules",
+    ".prettierrc.js",
+    ".eslintrc.js",
+    "babel.config.js",
+    "metro.config.js",
+    "react-native.config.js"
+  ]
+}
