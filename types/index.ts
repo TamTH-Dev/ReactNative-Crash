@@ -6,12 +6,19 @@ export interface ICategory {
   icon: ImageSourcePropType
 }
 
+export interface IGps {
+  latitude: number
+  longitude: number
+}
+
+export interface IRegion extends IGps {
+  latitudeDelta: number
+  longitudeDelta: number
+}
+
 export interface ILocation {
   streetName: string
-  gps: {
-    latitude: number
-    longitude: number
-  }
+  gps: IGps
 }
 
 export interface IMenuItem {
@@ -36,7 +43,7 @@ export interface IRestaurant {
     longitude: number
   }
   courier: {
-    avatar: string
+    avatar: ImageSourcePropType
     name: string
   }
   menu: Array<IMenuItem>
